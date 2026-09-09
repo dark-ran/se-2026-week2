@@ -13,5 +13,8 @@ public class Example {
         for (Node child : root.children) {
             System.out.println("- " + child.label);
         }
+
+        System.out.println("\n--- Testing BFS ---");
+        root.bfs();
     }
 }
