@@ -17,6 +17,19 @@ public class Node {
         this.children.add(child);
     }
 
+    public int height() {
+        if (children.isEmpty()) {
+            return 0;
+        }
+
+        int maxHeight = 0;
+
+        for (Node child : children) {
+            maxHeight = Math.max(maxHeight, child.height());
+        }
+
+        return maxHeight + 1;
+    }
     public void bfs() {
         Queue<Node> queue = new LinkedList<>();
         queue.add(this);
@@ -29,11 +42,13 @@ public class Node {
                 queue.addAll(current.children);
             }
         }
+    }
     public void dfs() {
         System.out.println(this.label);
         for (Node child : this.children) {
             child.dfs();
         }
+    }
     public boolean haschild() {
         return !children.isEmpty();
     }
