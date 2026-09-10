@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class Node {
     public String label;
@@ -27,5 +29,27 @@ public class Node {
         }
 
         return maxHeight + 1;
+    }
+    public void bfs() {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(this);
+
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            System.out.println(current.label);
+
+            if (current.children != null) {
+                queue.addAll(current.children);
+            }
+        }
+    }
+    public void dfs() {
+        System.out.println(this.label);
+        for (Node child : this.children) {
+            child.dfs();
+        }
+    }
+    public boolean haschild() {
+        return !children.isEmpty();
     }
 }

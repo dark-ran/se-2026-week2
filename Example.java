@@ -19,5 +19,9 @@ public class Example {
         System.out.println("Root height: " + root.height());
         System.out.println("Child 1 height: " + child1.height());
         System.out.println("Child 2 height: " + child2.height());
+        System.out.println("\n--- Testing BFS ---");
+        root.bfs();
+        System.out.println("root has Child:" + root.haschild());
+        System.out.println("Not has Child1:" + child1.haschild());
     }
 }
