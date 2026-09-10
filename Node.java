@@ -20,5 +20,7 @@ public class Node {
         for (Node child : this.children) {
             child.dfs();
         }
+    public boolean haschild() {
+        return !children.isEmpty();
     }
 }
