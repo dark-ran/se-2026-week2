@@ -16,5 +16,7 @@ public class Example {
 
         System.out.println("\n--- Testing BFS ---");
         root.bfs();
+        System.out.println("root has Child:" + root.haschild());
+        System.out.println("Not has Child1:" + child1.haschild());
     }
 }
